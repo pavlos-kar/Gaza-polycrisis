@@ -1,0 +1,354 @@
+<%- include('partials/header') %>
+
+<header class="container" style="margin-top: 5rem; text-align: center;">
+    <h2 class="animate-enter" data-i18n="hero-title" style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; animation-delay: 0.1s;">The Unfolding Reality</h2>
+    <p class="animate-enter" data-i18n="hero-sub" style="max-width: 800px; margin: 0 auto; opacity: 0.7; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.85rem; animation-delay: 0.2s;">Tracking the intersection of displacement, health, and ecological collapse.</p>
+    
+    <p class="animate-enter hero-description" data-i18n="hero-desc" style="animation-delay: 0.3s; max-width: 1200px; margin: 2rem auto 0; font-size: 1.25rem; line-height: 1.8; color: var(--text-body);">
+    </p>
+</header>
+
+<main>
+    <section id="updates" class="container" style="margin-top: 5rem;">
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+            <h3 data-i18n="sec-updates" style="font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Live Updates</h3>
+            <p data-i18n="sec-updates-desc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Real-time coverage of the latest developments and critical events on the ground.</p>
+        </div>
+        <div class="grid">
+            <% news.forEach((item, index) => { %>
+                <article class="card animate-enter" style="animation-delay: <%= 0.5 + (index * 0.1) %>s;">
+                    <% if(item.image) { %> 
+                        <img src="<%= item.image %>" alt="<%= item.title %>" title="<%= item.title %>" class="card-image"> 
+                    <% } %>
+                    <div class="card-content">
+                        <h4><%= item.title %></h4>
+                        <p><%= item.snippet %></p>
+                        <span class="card-meta"><%= item.meta %></span>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    </section>
+
+    <section id="map" class="container" style="margin-top: 5rem;">
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+            <h3 data-i18n="sec-map" style="font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Satellite Overview</h3>
+            <p data-i18n="sec-map-desc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Geospatial imagery monitoring physical changes, displacement, and infrastructural damage.</p>
+        </div>
+        
+        <div class="animate-enter" style="width: 100%; height: 450px; border: 1px solid var(--border-color); background: #eee;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217897.6208639836!2d34.29676997637841!3d31.43282229560649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fd7f054e542767%3A0x7ff98dc913046392!2sGaza%20Strip!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: grayscale(100%) contrast(1.2);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map of Gaza Strip">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="sectors" class="container" style="margin-top: 5rem;">
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+            <h3 data-i18n="sec-sectors" style="font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Sector Analysis</h3>
+            <p data-i18n="sec-sectors-desc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">A comprehensive breakdown of the impact on critical life-support systems.</p>
+        </div>
+        <div class="grid">
+            <% sectors.forEach((item, index) => { %>
+                <article class="card animate-enter" style="animation-delay: <%= 0.9 + (index * 0.1) %>s;">
+                    <% if(item.image) { %> 
+                        <img src="<%= item.image %>" alt="<%= item.title %>" title="<%= item.title %>" class="card-image"> 
+                    <% } %>
+                    <div class="card-content">
+                        <h4><%= item.title %></h4>
+                        <p><%= item.snippet %></p>
+                        <span class="card-meta" style="color: var(--c-red);"><%= item.meta %></span>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    </section>
+
+    <section id="timeline" class="container" style="margin-top: 8rem;">
+        <style>
+            body.high-contrast .timeline,
+            body.high-contrast .timeline-container,
+            body.high-contrast .timeline-content h4,
+            body.high-contrast .timeline-content p,
+            body.high-contrast .timeline-content span {
+                color: #ffffff !important;
+                border-color: #ffffff !important;
+            }
+
+            body.high-contrast .timeline::after,
+            body.high-contrast .timeline-container::after {
+                background-color: #ffffff !important;
+                border-color: #ffffff !important;
+            }
+        </style>
+
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); text-align: center; margin-bottom: 3rem; padding-bottom: 1rem;">
+            <h3 data-i18n="sec-timeline" style="font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Crisis Timeline</h3>
+            <p data-i18n="sec-timeline-desc" style="font-size: 0.95rem; color: var(--text-body); margin: 0.5rem auto 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Chronological tracking of significant events and escalation milestones.</p>
+        </div>
+
+        <div class="timeline animate-enter">
+            <div class="timeline-container timeline-left">
+                <div class="timeline-content">
+                    <span style="color: var(--c-red); font-weight: bold; font-size: 0.8rem;">OCT 2023</span>
+                    <h4 data-i18n="tl-1-title">Initial Escalation</h4>
+                    <p data-i18n="tl-1-desc" style="font-size: 0.9rem; opacity: 0.8;">Mass displacement begins following evacuation orders in the North.</p>
+                </div>
+            </div>
+            <div class="timeline-container timeline-right">
+                <div class="timeline-content">
+                    <span style="color: var(--c-red); font-weight: bold; font-size: 0.8rem;">NOV 2023</span>
+                    <h4 data-i18n="tl-2-title">Medical Sector Crisis</h4>
+                    <p data-i18n="tl-2-desc" style="font-size: 0.9rem; opacity: 0.8;">Fuel shortages lead to the collapse of critical healthcare infrastructure.</p>
+                </div>
+            </div>
+            <div class="timeline-container timeline-left">
+                <div class="timeline-content">
+                    <span style="color: var(--c-red); font-weight: bold; font-size: 0.8rem;">DEC 2023</span>
+                    <h4 data-i18n="tl-3-title">Infrastructure Damage</h4>
+                    <p data-i18n="tl-3-desc" style="font-size: 0.9rem; opacity: 0.8;">Significant destruction of water desalination and sanitation facilities.</p>
+                </div>
+            </div>
+            <div class="timeline-container timeline-right">
+                <div class="timeline-content">
+                    <span style="color: var(--c-red); font-weight: bold; font-size: 0.8rem;">PRESENT</span>
+                    <h4 data-i18n="tl-4-title">Famine Risk</h4>
+                    <p data-i18n="tl-4-desc" style="font-size: 0.9rem; opacity: 0.8;">International reports warn of imminent famine risk in Northern governorates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reports" style="margin-top: 8rem; max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+            <h3 data-i18n="sec-reports" style="font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Verified Reports & Data</h3>
+            <p data-i18n="sec-reports-desc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Official documentation and evidentiary records from trusted international bodies.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <% sources.forEach((source) => { %>
+                <div class="animate-enter" style="border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
+                    <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--c-red);"><%= source.publisher %></span>
+                    <h4 style="font-size: 1.5rem; margin: 0.5rem 0;"><%= source.title %></h4>
+                    <p style="opacity: 0.8; margin-bottom: 1rem;"><%= source.summary %></p>
+                    <a href="<%= source.url %>" target="_blank" style="text-decoration: underline; color: var(--text-head); font-weight: 600;">Read Report →</a>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <section id="direct-action" style="margin-top: 8rem; max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
+        <div class="animate-enter" style="border-bottom: 3px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+            <h3 data-i18n="sec-direct" style="font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Direct Action</h3>
+            <p data-i18n="sec-direct-desc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Verified pathways for providing immediate humanitarian and medical aid.</p>
+        </div>
+        
+        <div class="grid" style="margin-top: 2rem; margin-bottom: 0; gap: 2rem;">
+            
+            <% donations.forEach((donation) => { %>
+                <div class="animate-enter card" style="padding: 2rem; border: 1px solid var(--border-color); background: var(--bg-card);">
+                    <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;"><%= donation.organization %></h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; opacity: 0.8;"><%= donation.description %></p>
+                    <button onclick="openWarning('<%= donation.url %>')" style="width: 100%; padding: 0.75rem; background: var(--c-black); color: #ffffff; border: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; cursor: pointer;">Donate Now</button>
+                </div>
+            <% }) %>
+
+            <div class="animate-enter card" style="padding: 2rem; border: 1px solid var(--border-color); background: var(--bg-card); display: flex; flex-direction: column; justify-content: center;">
+                <h4 data-i18n="why-donate-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Why Donate?</h4>
+                <p data-i18n="why-donate-text" style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0; line-height: 1.6;">
+                    International donations are currently the primary source of survival. These verified organizations provide immediate medical relief, clean water, and food security to displaced families on the ground.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="join" style="margin-top: 8rem; margin-bottom: 8rem; background: var(--bg-card); border-top: 4px solid #009736; border-bottom: 4px solid #000; padding: 4rem 1rem; text-align: center;">
+        <div class="container" style="max-width: 700px;">
+            <h3 class="animate-enter" data-i18n="sustainer-title" style="font-size: 2.5rem; color: var(--text-head); margin-bottom: 1rem;">Become a Supporter</h3>
+            
+            <p class="animate-enter" data-i18n="sustainer-text" style="font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+                For €5/month, you help keep this site independent.
+            </p>
+
+            <% if(user && user.tier === 2) { %>
+                <div style="padding: 1.5rem; border: 1px solid var(--border-color); display: inline-block; background: var(--bg-body);">
+                    <p data-i18n="supporter-msg" style="margin-bottom: 1rem; font-weight: bold; color: var(--text-head);">You are a Supporter.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Use the <strong style="font-size: 1.2rem;">⚙</strong> menu to toggle your Activist Theme.</p>
+                </div>
+            <% } else { %>
+                <button onclick="openFormModal()" class="animate-enter" data-i18n="join-btn" style="background: var(--c-black); color: var(--bg-body); border: none; padding: 1rem 3rem; font-family: var(--font-head); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: transform 0.2s;">
+                    Join Now (€5)
+                </button>
+            <% } %>
+        </div>
+    </section>
+
+    <section id="comments-section" style="margin-top: 8rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h3 class="animate-enter" data-i18n="comments-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Community Reflections</h3>
+            <p data-i18n="comments-desc" style="font-size: 0.95rem; color: var(--text-body); margin: 0.5rem auto 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">A forum for community dialogue, mutual support, and shared perspectives on the current crisis.</p>
+        </div>
+
+        <% if(user) { %>
+            <form id="comment-form" style="margin-bottom: 4rem; background: rgba(0,0,0,0.03); padding: 2rem; border-radius: 4px;">
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <% if(user.tier === 2) { %>
+                        <img src="/images/logo.png" style="width: 32px; height: 32px; image-rendering: pixelated; border-radius: 50%; border: 1px solid var(--border-color); margin-right: 12px;">
+                    <% } else { %>
+                        <div style="width: 32px; height: 32px; background: #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    <% } %>
+                    <label style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Posting as <%= user.username %></label>
+                </div>
+                <textarea data-i18n="comments-placeholder" name="text" rows="3" required placeholder="Add your reflection..." style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-body);"></textarea>
+                
+                <button type="submit" data-i18n="comments-btn" style="padding: 0.75rem 2rem; background: var(--c-black); color: #ffffff; border: none; font-weight: 600; margin-top: 1rem; text-transform: uppercase; cursor: pointer;">Submit Reflection</button>
+            </form>
+        <% } %>
+
+        <div id="comment-feed">
+            <% comments.forEach((comment, index) => { %>
+                <div class="animate-enter comment-card comment-item" 
+                     data-index="<%= index %>"
+                     style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); display: flex; gap: 1rem; <%= index >= 4 ? 'display: none;' : '' %>">
+                    
+                    <div style="flex-shrink: 0;">
+                        <% if(comment.tier === 2) { %>
+                            <img src="/images/logo.png" style="width: 40px; height: 40px; image-rendering: pixelated; border-radius: 50%; border: 1px solid var(--border-color);">
+                        <% } else { %>
+                            <div style="width: 40px; height: 40px; background: #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <span style="font-weight: 700;"><%= comment.username %></span>
+                        <% if(comment.tier === 2) { %><span style="color: #009736; font-size: 0.7rem; margin-left: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">★ Supporter</span><% } %>
+                        <p style="margin-top: 0.25rem;"><%= comment.text %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <% if(comments.length > 4) { %>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <button id="toggle-comments-btn" data-i18n="show-all" onclick="toggleComments()" 
+                    style="background: transparent; border: 1px solid var(--border-color); color: var(--text-body); padding: 0.75rem 2rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; cursor: pointer;">
+                    Show All Comments
+                </button>
+            </div>
+        <% } %>
+    </section>
+</main>
+
+<div id="donation-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center;">
+    <div style="background: var(--c-white); color: #000000; padding: 3rem; max-width: 500px; text-align: center; border: 1px solid var(--c-black);">
+        <h3 style="color: var(--c-red); margin-bottom: 1.5rem;">Important Notice</h3>
+        <p style="margin-bottom: 2.5rem; opacity: 1;">You are leaving to a third-party site.<br>Donate at your own free will.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+            <button onclick="document.getElementById('donation-modal').style.display='none'" style="padding: 0.75rem 2rem; border: 1px solid var(--c-black); background: transparent; color: #000000; cursor: pointer;">Cancel</button>
+            <a id="confirm-donation-btn" href="#" target="_blank" onclick="document.getElementById('donation-modal').style.display='none'" style="padding: 0.75rem 2rem; background: var(--c-red); color: white; text-decoration: none;">Proceed</a>
+        </div>
+    </div>
+</div>
+
+<div id="form-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center;">
+    <div style="background: var(--bg-body); padding: 3rem; width: 100%; max-width: 450px; border: 2px solid var(--border-color);">
+        <h3 data-i18n="form-title" style="font-family: var(--font-head); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Donor Information</h3>
+        <p data-i18n="form-desc" style="text-align: center; margin-bottom: 2rem; opacity: 0.7;">Required for billing purposes.</p>
+        
+        <form action="/subscribe" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div>
+                <label data-i18n="lbl-name" style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Full Name</label>
+                <input data-i18n="ph-name" type="text" required placeholder="Jane Doe" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-body);">
+            </div>
+            <div>
+                <label data-i18n="lbl-address" style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Billing Address</label>
+                <input data-i18n="ph-address" type="text" required placeholder="123 Olive St." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-body);">
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <input data-i18n="ph-city" type="text" required placeholder="City" style="width: 50%; padding: 0.75rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-body);">
+                <input data-i18n="ph-zip" type="text" required placeholder="Postcode" style="width: 50%; padding: 0.75rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-body);">
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button data-i18n="btn-cancel" type="button" onclick="document.getElementById('form-modal').style.display='none'" 
+                    style="flex: 1; padding: 1rem; border: 1px solid var(--c-black); background: transparent; cursor: pointer; text-transform: uppercase; color: var(--text-body);">
+                    Cancel
+                </button>
+                <button data-i18n="btn-confirm" type="submit" 
+                    style="flex: 1; padding: 1rem; background: #009736; color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold;">
+                    Confirm & Pay
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openWarning(url) {
+        document.getElementById('confirm-donation-btn').href = url;
+        document.getElementById('donation-modal').style.display = 'flex';
+    }
+    function openFormModal() {
+        document.getElementById('form-modal').style.display = 'flex';
+    }
+    
+    // Comment Submission
+    const form = document.getElementById('comment-form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new URLSearchParams(new FormData(form));
+            try {
+                const response = await fetch('/comment-api', { method: 'POST', body: formData });
+                if (response.ok) {
+                    location.reload(); 
+                } else {
+                    console.error("Server error");
+                }
+            } catch (err) { console.error("Comment failed", err); }
+        });
+    }
+
+    // --- SHOW ALL / SHOW LESS LOGIC WITH TRANSLATION SUPPORT ---
+    let showingAll = false;
+    
+    // Fallback Translation Data for this specific component
+    const jsTranslations = {
+        en: { "show-all": "Show All Comments", "show-less": "Show Less" },
+        el: { "show-all": "Προβολή όλων", "show-less": "Προβολή λιγότερων" },
+        ar: { "show-all": "عرض جميع التعليقات", "show-less": "عرض أقل" }
+    };
+
+    function toggleComments() {
+        const comments = document.querySelectorAll('.comment-item');
+        const btn = document.getElementById('toggle-comments-btn');
+        
+        showingAll = !showingAll; 
+        const currentLang = localStorage.getItem('lang') || 'en';
+
+        if (showingAll) {
+            comments.forEach(el => el.style.display = 'flex');
+            const txt = (jsTranslations[currentLang] && jsTranslations[currentLang]['show-less']) ? jsTranslations[currentLang]['show-less'] : "Show Less";
+            btn.innerText = txt;
+        } else {
+            comments.forEach((el, index) => {
+                if (index >= 4) el.style.display = 'none';
+            });
+            const txt = (jsTranslations[currentLang] && jsTranslations[currentLang]['show-all']) ? jsTranslations[currentLang]['show-all'] : "Show All Comments";
+            btn.innerText = txt;
+            document.getElementById('comments-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+
+<%- include('partials/footer') %>

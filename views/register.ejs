@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div style="max-width: 400px; margin: 4rem auto;">
+    <h2>Join the Platform</h2>
+    <form action="/register" method="POST" class="card">
+        <div style="margin-bottom: 1rem;">
+            <label>Username</label>
+            <input type="text" name="username" required placeholder="e.g. GEORGIOS" style="width: 100%; padding: 0.5rem;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <label>Password</label>
+            <input type="password" name="password" required placeholder="e.g. 1234Q!" style="width: 100%; padding: 0.5rem;">
+        </div>
+        <button type="submit" style="padding: 0.5rem 1rem; background: var(--c-black); color: #fff; border: none; width: 100%;">Register</button>
+    </form>
+</div>
+<%- include('partials/footer') %>

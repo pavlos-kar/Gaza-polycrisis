@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza: Polycrisis Archive</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍉</text></svg>">
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/themes.css">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="<%= (user && user.tier === 2) ? 'activist-theme' : '' %>">
+
+    <nav style="position: sticky; top: 0; background: var(--bg-body); z-index: 1000; border-bottom: 3px solid var(--border-color); padding: 1.25rem 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 2rem;">
+            
+            <div class="nav-logo" style="padding-right: 2rem; border-right: 2px solid var(--text-head); margin-right: 1rem;">
+                <h1 style="margin: 0; line-height: 1;">
+                    <a href="/" style="text-decoration: none; color: var(--text-head); display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 1.4rem; letter-spacing: 0.5px; white-space: nowrap;">
+                        <span style="font-size: 1.6rem;">🍉</span> GAZA: POLYCRISIS
+                    </a>
+                </h1>
+            </div>
+
+            <div class="nav-links" style="display: flex; gap: 1.2rem; align-items: center; white-space: nowrap;">
+                <a href="#updates" data-i18n="nav-updates" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Updates</a>
+                <a href="#map" data-i18n="nav-map" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Map</a>
+                <a href="#sectors" data-i18n="nav-analysis" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Analysis</a>
+                <a href="#timeline" data-i18n="nav-timeline" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Timeline</a>
+                <a href="#reports" data-i18n="nav-reports" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Reports</a>
+                <a href="#direct-action" data-i18n="nav-action" style="text-decoration: none; color: var(--c-red); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Action</a>
+                <a href="#join" data-i18n="nav-join" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Join</a>
+                <a href="#comments-section" data-i18n="nav-reflections" style="text-decoration: none; color: var(--text-head); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Reflections</a>
+                
+                <div style="width: 1px; height: 15px; background: var(--border-color); margin: 0 0.5rem;"></div>
+
+                <% if(locals.user) { %>
+                    <a href="/logout" data-i18n="nav-logout" style="text-decoration: none; color: var(--c-red); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Logout</a>
+                <% } else { %>
+                    <a href="/login" data-i18n="nav-login" style="text-decoration: none; color: var(--text-head); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Login</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>

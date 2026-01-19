@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    /* Color Palette - "Sombre Editorial" */
+    --c-black: #000000;
+    --c-ink: #111111;
+    --c-white: #fdfbf7;     
+    --c-paper: #f4f1ea;     
+    --c-red: #8a1c1c;       
+    --c-green: #1a4a35;
+    
+    /* Defaults */
+    --bg-body: var(--c-white);
+    --bg-card: transparent; 
+    --text-head: var(--c-black);
+    --text-body: var(--c-ink);
+    --border-color: var(--c-black); 
+    
+    /* Typography */
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+}
+
+/* --- FIXED: REMOVED "body" PREFIX --- */
+.a11y-high-contrast {
+    /* Deep "shade of black" palette */
+    --bg-body: #080808 !important;  
+    --bg-card: #1a1a1a !important;  
+    --text-head: #ffffff !important; 
+    --text-body: #eeeeee !important; 
+    --border-color: #ffffff !important; 
+    --c-red: #ff3333 !important;     
+}
+
+.a11y-dyslexia {
+    --font-head: 'OpenDyslexic', sans-serif !important;
+    --font-body: 'OpenDyslexic', sans-serif !important;
+}
+
+.a11y-reduced-motion * {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* --- THEME: ACTIVIST (Palestine Colors) --- */
+/* Black Background, Red Text, Green/White Accents */
+body.theme-activist {
+    --bg-body: #000000;          /* Black */
+    --bg-card: #111111;          /* Dark Gray */
+    --text-body: #ffffff;        /* White */
+    --text-head: #ff3333;        /* Bright Red */
+    --border-color: #009736;     /* Green Borders */
+    --c-black: #ffffff;          /* Invert black to white for buttons */
+    --c-red: #ff3333;
+    --c-white: #000000;
+}
+
+/* Specific overrides for readability in this mode */
+body.theme-activist .card {
+    border: 1px solid var(--border-color);
+}
+body.theme-activist nav {
+    border-bottom: 4px solid var(--border-color);
+}
+body.theme-activist .card-meta {
+    color: #009736 !important; /* Green meta text */
+}

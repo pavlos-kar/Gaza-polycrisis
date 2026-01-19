@@ -1,0 +1,427 @@
+<footer style="margin-top: 6rem; border-top: 3px solid var(--border-color); background: var(--bg-body); padding: 1.5rem 1rem;">
+    <div class="container" style="text-align: center;">
+        
+        <div style="margin-bottom: 1.25rem;">
+            <p data-i18n="footer-follow" style="font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem; opacity: 0.8; font-weight: 700;">Follow the Archive</p>
+            <div style="display: flex; justify-content: center; gap: 2rem;">
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" style="color: var(--text-head); transition: opacity 0.2s;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://x.com" target="_blank" aria-label="X / Twitter" style="color: var(--text-head); transition: opacity 0.2s;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.667L8.667 4z"/><path d="M4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" style="color: var(--text-head); transition: opacity 0.2s;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+            </div>
+        </div>
+
+        <div style="max-width: 850px; margin: 0 auto 1.5rem auto;">
+            <p data-i18n="footer-disclaimer" style="font-size: 1rem; opacity: 0.8; line-height: 1.5; margin-bottom: 1rem;">
+                This archive documents an active humanitarian crisis. Some content may be distressing. All data is verified by independent international bodies. Viewer discretion is advised.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; font-size: 1.1rem;">
+                <a href="#" onclick="openFooterModal('terms-modal'); return false;" data-i18n="footer-terms" style="text-decoration: none; color: var(--text-body); border-bottom: 1px dotted var(--text-body);">Terms of Use</a>
+                <a href="#" onclick="openFooterModal('privacy-modal'); return false;" data-i18n="footer-privacy" style="text-decoration: none; color: var(--text-body); border-bottom: 1px dotted var(--text-body);">Privacy Policy</a>
+                <a href="#" onclick="openFooterModal('contact-modal'); return false;" data-i18n="footer-contact" style="text-decoration: none; color: var(--text-body); border-bottom: 1px dotted var(--text-body);">Contact Us</a>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <p style="font-size: 0.9rem; opacity: 0.7; margin: 0;">
+                &copy; 2026 Gaza: Polycrisis Archive. <span data-i18n="footer-rights">All rights reserved.</span>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<div id="terms-modal" class="footer-modal" style="display: none;">
+    <div class="footer-modal-content">
+        <h3 data-i18n="footer-terms">Terms of Use</h3>
+        <div class="modal-body">
+            <p data-i18n="modal-terms-text">This archive is an open-source educational resource. By accessing this site, you agree to use the data for humanitarian, academic, or journalistic purposes only. Commercial exploitation of this sensitive data is strictly prohibited. While we verify sources, real-time conflict data is subject to change.</p>
+        </div>
+        <button onclick="closeFooterModal('terms-modal')" data-i18n="btn-close">Close</button>
+    </div>
+</div>
+
+<div id="privacy-modal" class="footer-modal" style="display: none;">
+    <div class="footer-modal-content">
+        <h3 data-i18n="footer-privacy">Privacy Policy</h3>
+        <div class="modal-body">
+            <p data-i18n="modal-privacy-text">We prioritize your privacy. This site does not use tracking cookies or analytics. Local storage is used exclusively to save your accessibility preferences (language, contrast). Donor information is processed securely by third-party payment processors and is not stored on our servers.</p>
+        </div>
+        <button onclick="closeFooterModal('privacy-modal')" data-i18n="btn-close">Close</button>
+    </div>
+</div>
+
+<div id="contact-modal" class="footer-modal" style="display: none;">
+    <div class="footer-modal-content">
+        <h3 data-i18n="footer-contact">Contact Us</h3>
+        <div class="modal-body" style="text-align: left;">
+            <p data-i18n="modal-contact-text" style="margin-bottom: 1.5rem;">For press inquiries, data correction, or partnership opportunities, please reach out to our coordination team.</p>
+            
+            <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd;">
+                <strong style="text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">General Inquiries</strong>
+                <span style="font-family: monospace; font-size: 1.1rem;">info@gaza-polycrisis.org</span>
+            </div>
+            
+            <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd;">
+                <strong style="text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">Press Office</strong>
+                <span style="font-family: monospace; font-size: 1.1rem;">press@gaza-polycrisis.org</span>
+            </div>
+
+            <div>
+                <strong style="text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">Headquarters (Brussels)</strong>
+                <p style="margin: 0; opacity: 0.8;">42 Rue de la Loi<br>1040 Brussels, Belgium<br>+32 (0)2 555 0123</p>
+            </div>
+        </div>
+        <button onclick="closeFooterModal('contact-modal')" data-i18n="btn-close">Close</button>
+    </div>
+</div>
+
+<style>
+    /* Footer Modal Styles */
+    .footer-modal {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.85); z-index: 3000;
+        display: flex; align-items: center; justify-content: center;
+        backdrop-filter: blur(4px);
+    }
+    .footer-modal-content {
+        background: var(--bg-body); color: var(--text-body);
+        padding: 3rem; max-width: 500px; width: 90%;
+        border: 2px solid var(--border-color);
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .footer-modal-content h3 {
+        margin-bottom: 1.5rem; font-size: 1.8rem; text-transform: uppercase;
+    }
+    .footer-modal-content button {
+        margin-top: 2rem; padding: 0.75rem 2rem;
+        background: var(--c-black); color: var(--bg-body);
+        border: 1px solid var(--border-color); cursor: pointer;
+        text-transform: uppercase; font-weight: bold;
+    }
+
+    /* Accessibility Tool Styles */
+    html.a11y-text-large { font-size: 125%; }
+    
+    body.a11y-links a {
+        text-decoration: underline !important;
+        background-color: #ffff00 !important;
+        color: #000000 !important;
+        font-weight: bold;
+    }
+    body.a11y-links button, body.a11y-links .card a { border: 2px solid #ffff00; }
+
+    body.a11y-spacing {
+        line-height: 2 !important;
+        word-spacing: 0.1rem !important;
+        letter-spacing: 0.05rem !important;
+    }
+    body.a11y-spacing p { margin-bottom: 2.5rem !important; }
+
+    /* FAB BUTTON */
+    .a11y-fab {
+        width: 65px; height: 65px;
+        background: #800000; color: #ffffff;
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        cursor: pointer; transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(128, 0, 0, 0.6);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
+    }
+    .a11y-fab:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(128, 0, 0, 0.9); }
+    .a11y-fab:hover svg { animation: rotateGear 4s linear infinite; }
+    @keyframes rotateGear { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .a11y-fab.active { background: #ff0000; border-color: #fff; }
+
+    /* MENU PANEL */
+    .a11y-panel {
+        position: fixed; bottom: 7.5rem; right: 2rem;
+        background: #000000; border: 2px solid #333333;
+        padding: 1.5rem; border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        z-index: 1001; width: 280px;
+        display: none; flex-direction: column; gap: 0.8rem;
+        animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .a11y-panel h4 { margin: 0.5rem 0 0.2rem 0; font-size: 0.75rem; text-transform: uppercase; color: #888; letter-spacing: 1.5px; }
+    
+    #lang-btn {
+        background: #1a1a1a; color: #ffffff !important; border: 1px solid #444;
+        padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; transition: all 0.2s ease;
+    }
+    #lang-btn:hover { background: #333; border-color: #800000; box-shadow: 0 0 10px rgba(128, 0, 0, 0.5); }
+    
+    .a11y-panel button:not(#lang-btn) { 
+        padding: 0.8rem; border: 1px solid #000; background: #ffffff; color: #000000; 
+        border-radius: 8px; cursor: pointer; text-align: left; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;
+    }
+    .a11y-panel button:hover:not(#lang-btn) { background: #f0f0f0; transform: translateX(5px); }
+    .a11y-panel hr { border: 0; border-top: 1px solid #222; margin: 0.5rem 0; }
+
+    /* Timeline CSS */
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+    .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--c-black); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+    .timeline-container { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+    .timeline-container::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--bg-body); border: 4px solid var(--c-red); top: 15px; border-radius: 50%; z-index: 1; }
+    .timeline-left { left: 0; text-align: right; }
+    .timeline-right { left: 50%; text-align: left; }
+    .timeline-right::after { left: -10px; }
+    .timeline-content { padding: 1.5rem; background: var(--bg-card); position: relative; border-radius: 8px; border: 1px solid var(--border-color); }
+    
+    @media screen and (max-width: 600px) {
+        .timeline::after { left: 31px; }
+        .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
+        .timeline-right { left: 0%; }
+        .timeline-container::after { left: 21px; }
+    }
+</style>
+
+<button id="a11y-toggle" class="a11y-fab" aria-label="Settings" onclick="toggleA11yMenu()">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+    </svg>
+</button>
+
+<div id="a11y-menu" class="a11y-panel">
+    <h4 data-i18n="menu-lang-header">Language / Γλώσσα</h4>
+    <button onclick="toggleLanguage()" id="lang-btn">Switch to Greek (Ελληνικά)</button>
+
+    <h4 data-i18n="menu-vis-header">Visual Adjustments</h4>
+    <button onclick="toggleHighContrast()" data-i18n="btn-dark-mode">Dark Mode</button>
+    <button onclick="document.documentElement.classList.toggle('a11y-text-large'); savePreference('largeText', document.documentElement.classList.contains('a11y-text-large'));" data-i18n="btn-large-text">Large Text (A+)</button>
+    <button onclick="document.body.classList.toggle('a11y-links'); savePreference('links', document.body.classList.contains('a11y-links'));" data-i18n="btn-highlight-links">Highlight Links</button>
+
+    <h4 data-i18n="menu-read-header">Reading Aids</h4>
+    <button onclick="document.body.classList.toggle('a11y-dyslexia'); savePreference('dyslexia', document.body.classList.contains('a11y-dyslexia'));" data-i18n="btn-dyslexia-font">Dyslexia Font</button>
+    <button onclick="document.body.classList.toggle('a11y-spacing'); savePreference('spacing', document.body.classList.contains('a11y-spacing'));" data-i18n="btn-relaxed-spacing">Relaxed Spacing</button>
+    
+    <% if(user && user.tier === 2) { %>
+        <hr>
+        <button onclick="toggleActivistTheme()" style="color: #ff4d4d; border-color: #441111;" data-i18n="btn-activist-theme">
+            Toggle Activist Theme
+        </button>
+    <% } %>
+</div>
+
+<script>
+    /* Footer Modal Logic */
+    function openFooterModal(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+    function closeFooterModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    /* Helper to save preferences */
+    function savePreference(key, value) {
+        localStorage.setItem(key, value);
+    }
+
+    function toggleHighContrast() {
+        const isHigh = document.documentElement.classList.toggle('a11y-high-contrast');
+        if (isHigh) {
+            document.body.classList.add('high-contrast');
+        } else {
+            document.body.classList.remove('high-contrast');
+        }
+        savePreference('highContrast', isHigh);
+    }
+
+    /* ---------------------------------------------------------
+       CRITICAL: INITIALIZE PREFERENCES ON PAGE LOAD
+       --------------------------------------------------------- */
+    function initPreferences() {
+        // --- FIXED: Inject current user Tier from Server ---
+        const userTier = <%= user ? user.tier : 0 %>;
+
+        // 1. High Contrast (Syncs HTML and BODY)
+        if (localStorage.getItem('highContrast') === 'true') {
+            document.documentElement.classList.add('a11y-high-contrast');
+            document.body.classList.add('high-contrast'); 
+        } else {
+            document.documentElement.classList.remove('a11y-high-contrast');
+            document.body.classList.remove('high-contrast');
+        }
+
+        // 2. Activist Theme Logic
+        if (userTier !== 2) {
+            localStorage.removeItem('theme'); // Clear memory
+            document.body.classList.remove('theme-activist');
+        } else {
+            if (localStorage.getItem('theme') === 'activist') {
+                document.body.classList.add('theme-activist');
+            }
+        }
+
+        // 3. Other Visual Tools
+        if (localStorage.getItem('dyslexia') === 'true') document.body.classList.add('a11y-dyslexia');
+        if (localStorage.getItem('largeText') === 'true') document.documentElement.classList.add('a11y-text-large');
+        if (localStorage.getItem('links') === 'true') document.body.classList.add('a11y-links');
+        if (localStorage.getItem('spacing') === 'true') document.body.classList.add('a11y-spacing');
+    }
+
+    const translations = {
+        "img-logo": { en: "Gaza Polycrisis Logo", el: "Λογότυπο Gaza Polycrisis" },
+        "img-supporter": { en: "Supporter Badge (Watermelon)", el: "Σήμα Υποστηρικτή (Καρπούζι)" },
+        
+        /* NAVIGATION */
+        "nav-title": { en: "GAZA: POLYCRISIS", el: "ΓΑΖΑ: ΠΟΛΥΚΡΙΣΗ" },
+        "nav-updates": { en: "Updates", el: "Ενημερώσεις" },
+        "nav-map": { en: "Map", el: "Χάρτης" },
+        "nav-analysis": { en: "Analysis", el: "Ανάλυση" },
+        "nav-timeline": { en: "Timeline", el: "Χρονολόγιο" },
+        "nav-reports": { en: "Reports", el: "Αναφορές" },
+        "nav-action": { en: "Action", el: "Δράση" },
+        "nav-join": { en: "Join", el: "Συμμετοχή" },
+        "nav-reflections": { en: "Reflections", el: "Αντανακλάσεις" },
+        "nav-login": { en: "Login", el: "Σύνδεση" },
+        "nav-logout": { en: "Logout", el: "Αποσύνδεση" },
+        "nav-hello": { en: "Hello,", el: "Γειά σου," },
+
+        /* MENU / ACCESSIBILITY (ADDED THESE) */
+        "menu-lang-header": { en: "Language / Γλώσσα", el: "Language / Γλώσσα" },
+        "menu-vis-header": { en: "Visual Adjustments", el: "Οπτικές Προσαρμογές" },
+        "menu-read-header": { en: "Reading Aids", el: "Βοηθήματα Ανάγνωσης" },
+        "btn-dark-mode": { en: "Dark Mode", el: "Σκοτεινή Λειτουργία" },
+        "btn-large-text": { en: "Large Text (A+)", el: "Μεγάλο Κείμενο (A+)" },
+        "btn-highlight-links": { en: "Highlight Links", el: "Τονισμός Συνδέσμων" },
+        "btn-dyslexia-font": { en: "Dyslexia Font", el: "Γραμματοσειρά Δυσλεξίας" },
+        "btn-relaxed-spacing": { en: "Relaxed Spacing", el: "Χαλαρή Απόσταση" },
+        "btn-activist-theme": { en: "Toggle Activist Theme", el: "Εναλλαγή Θέματος Ακτιβιστή" },
+
+        /* HERO SECTION */
+        "hero-title": { en: "The Unfolding Reality", el: "Η Εξελισσόμενη Πραγματικότητα" },
+        "hero-sub": { en: "Tracking the intersection of displacement, health, and ecological collapse.", el: "Παρακολούθηση της διασταύρωσης εκτοπισμού, υγείας και οικολογικής κατάρρευσης." },
+        "hero-desc": { en: "The war in Gaza is widely considered a polycrisis because it represents a convergence of several distinct emergencies that interact to create a situation far more volatile than the sum of its parts. It is not merely a localized military conflict; rather, it serves as the epicenter for a cascading series of humanitarian, geopolitical, and economic shocks. While the immediate reality is a catastrophic humanitarian disaster marked by mass displacement and famine, this tragedy has simultaneously ignited regional instability involving multiple neighboring actors, disrupted vital global shipping routes, and deepened social and political polarization worldwide. This entanglement means that a failure in one area—such as diplomatic negotiations—accelerates instability in others, creating a complex web of consequences that is exceptionally difficult to contain or resolve. Ultimately, the scale of this interconnected tragedy demands that we move beyond observation, urging every individual to contribute—whether through advocacy, humanitarian aid, or dialogue—to the urgent and collective work of alleviating suffering.", el: "Ο πόλεμος στη Γάζα θεωρείται ευρέως ως μια πολυκρίση, επειδή αντιπροσωπεύει τη σύγκλιση πολλών ξεχωριστών καταστάσεων έκτακτης ανάγκης που αλληλεπιδρούν, δημιουργώντας μια κατάσταση πολύ πιο εκρηκτική από το άθροισμα των μερών της. Δεν πρόκειται απλώς για μια τοπική στρατιωτική σύγκρουση, αλλά λειτουργεί ως το επίκεντρο για μια αλυσιδωτή σειρά ανθρωπιστικών, γεωπολιτικών και οικονομικών κλυδωνισμών. Ενώ η άμεση πραγματικότητα είναι μια καταστροφική ανθρωπιστική κρίση που χαρακτηρίζεται από μαζικό εκτοπισμό και λιμό, αυτή η τραγωδία έχει ταυτόχρονα πυροδοτήσει περιφερειακή αστάθεια με την εμπλοκή πολλών γειτονικών παραγόντων, έχει διαταράξει ζωτικές παγκόσμιες ναυτιλιακές οδούς και έχει βαθύνει την κοινωνική και πολιτική πόλωση παγκοσμίως. Αυτή η αλληλεξάρτηση σημαίνει ότι μια αποτυχία σε έναν τομέα —όπως στις διπλωματικές διαπραγματεύσεις— επιταχύνει την αστάθεια στους υπόλοιπους, δημιουργώντας ένα περίπλοκο πλέγμα συνεπειών που είναι εξαιρετικά δύσκολο να περιοριστεί ή να επιλυθεί. Τελικά, το μέγεθος αυτής της αλληλένδετης τραγωδίας απαιτεί να ξεπεράσουμε την απλή παρατήρηση, προτρέποντας κάθε άτομο να συνεισφέρει —είτε μέσω της προάσπισης δικαιωμάτων, της ανθρωπιστικής βοήθειας ή του διαλόγου— στο επείγον και συλλογικό έργο για την ανακούφιση του ανθρώπινου πόνου." },
+        
+        /* SECTIONS */
+        "sec-updates": { en: "Live Updates", el: "Ζωντανές Ενημερώσεις" },
+        "sec-updates-desc": { en: "Real-time coverage of the latest developments and critical events on the ground.", el: "Ενημέρωση σε πραγματικό χρόνο για τις τελευταίες εξελίξεις και κρίσιμα γεγονότα στο έδαφος." },
+        "sec-map": { en: "Satellite Overview", el: "Δορυφορική Επισκόπηση" },
+        "sec-map-desc": { en: "Geospatial imagery monitoring physical changes, displacement, and infrastructural damage.", el: "Γεωχωρική απεικόνιση που παρακολουθεί φυσικές αλλαγές, εκτοπισμό και ζημιές υποδομών." },
+        "sec-sectors": { en: "Sector Analysis", el: "Ανάλυση Τομέων" },
+        "sec-sectors-desc": { en: "A comprehensive breakdown of the impact on critical life-support systems.", el: "Μια ολοκληρωμένη ανάλυση του αντικτύπου στα κρίσιμα συστήματα διατήρησης της ζωής." },
+        "sec-reports": { en: "Verified Reports & Data", el: "Επαληθευμένες Αναφορές & Δεδομένα" },
+        "sec-reports-desc": { en: "Official documentation and evidentiary records from trusted international bodies.", el: "Επίσημη τεκμηρίωση και αποδεικτικά στοιχεία από αξιόπιστα διεθνή όργανα." },
+        "sec-direct": { en: "Direct Action", el: "Άμεση Δράση" },
+        "sec-direct-desc": { en: "Verified pathways for providing immediate humanitarian and medical aid.", el: "Επαληθευμένες διαδρομές για την παροχή άμεσης ανθρωπιστικής και ιατρικής βοήθειας." },
+        
+        /* TIMELINE */
+        "sec-timeline": { en: "Crisis Timeline", el: "Χρονοδιάγραμμα Κρίσης" },
+        "sec-timeline-desc": { en: "Chronological tracking of significant events and escalation milestones.", el: "Χρονολογική παρακολούθηση σημαντικών γεγονότων και ορόσημων κλιμάκωσης." },
+        "tl-1-title": { en: "Initial Escalation", el: "Αρχική Κλιμάκωση" },
+        "tl-1-desc": { en: "Mass displacement begins following evacuation orders in the North.", el: "Μαζικός εκτοπισμός ξεκινά μετά από εντολές εκκένωσης στο Βορρά." },
+        "tl-2-title": { en: "Medical Sector Crisis", el: "Κρίση Ιατρικού Τομέα" },
+        "tl-2-desc": { en: "Fuel shortages lead to the collapse of critical healthcare infrastructure.", el: "Η έλλειψη καυσίμων οδηγεί στην κατάρρευση κρίσιμων υποδομών υγείας." },
+        "tl-3-title": { en: "Infrastructure Damage", el: "Καταστροφή Υποδομών" },
+        "tl-3-desc": { en: "Significant destruction of water desalination and sanitation facilities.", el: "Σημαντική καταστροφή εγκαταστάσεων αφαλάτωσης νερού και υγιεινής." },
+        "tl-4-title": { en: "Famine Risk", el: "Κίνδυνος Λιμού" },
+        "tl-4-desc": { en: "International reports warn of imminent famine risk in Northern governorates.", el: "Διεθνείς αναφορές προειδοποιούν για άμεσο κίνδυνο λιμού στις βόρειες επαρχίες." },
+        
+        /* DONATION / FORMS */
+        "why-donate-title": { en: "Why Donate?", el: "Γιατί να Δωρίσετε;" },
+        "why-donate-text": { en: "International donations are currently the primary source of survival. These verified organizations provide immediate medical relief, clean water, and food security to displaced families on the ground.", el: "Οι διεθνείς δωρεές είναι προς το παρόν η κύρια πηγή επιβίωσης. Αυτές οι επαληθευμένες οργανώσεις παρέχουν άμεση ιατρική ανακούφιση, καθαρό νερό και τροφική ασφάλεια στις εκτοπισμένες οικογένειες στο έδαφος." },
+        "sustainer-title": { en: "Become a Sustainer", el: "Γίνετε Υποστηρικτής" },
+        "sustainer-text": { en: "For €5/month, you help keep this archive independent.", el: "Με 5€/μήνα, βοηθάτε να παραμείνει αυτό το αρχείο ανεξάρτητο." },
+        "join-btn": { en: "Join Now (€5)", el: "Εγγραφή Τώρα (5€)" },
+        "supporter-msg": { en: "You are a Supporter.", el: "Είστε Υποστηρικτής." },
+        "comments-title": { en: "Community Reflections", el: "Σκέψεις της Κοινότητας" },
+        "comments-desc": { en: "A forum for community dialogue, mutual support, and shared perspectives on the current crisis.", el: "Ένας χώρος για κοινοτικό διάλογο, αμοιβαία υποστήριξη και κοινές απόψεις για την τρέχουσα κρίση." },
+        "comments-placeholder": { en: "Add your reflection...", el: "Προσθέστε τη σκέψη σας..." },
+        "comments-btn": { en: "Submit Reflection", el: "Υποβολή" },
+        "show-all": { en: "Show All Comments", el: "Προβολή Όλων" },
+        "show-less": { en: "Show Less", el: "Προβολή Λιγότερων" },
+        "form-title": { en: "Donor Information", el: "Στοιχεία Δωρητή" },
+        "form-desc": { en: "Required for billing purposes.", el: "Απαιτείται για λόγους τιμολόγησης." },
+        "lbl-name": { en: "Full Name", el: "Ονοματεπώνυμο" },
+        "ph-name": { en: "Jane Doe", el: "Γιάννης Παπαδόπουλος" },
+        "lbl-address": { en: "Billing Address", el: "Διεύθυνση Χρέωσης" },
+        "ph-address": { en: "123 Olive St.", el: "Οδός Ελιάς 123" },
+        "ph-city": { en: "City", el: "Πόλη" },
+        "ph-zip": { en: "Postcode", el: "Τ.Κ." },
+        "btn-cancel": { en: "Cancel", el: "Ακύρωση" },
+        "btn-confirm": { en: "Confirm & Pay", el: "Επιβεβαίωση & Πληρωμή" },
+        "btn-close": { en: "Close", el: "Κλείσιμο" },
+
+        /* FOOTER */
+        "footer-copyright": { en: "© 2026 Gaza Polycrisis Archive", el: "© 2026 Αρχείο Polycrisis Γάζας" },
+        "footer-terms": { en: "Terms of Use", el: "Όροι Χρήσης" },
+        "footer-privacy": { en: "Privacy Policy", el: "Πολιτική Προσωπικών Δεδομένων" },
+        "footer-contact": { en: "Contact Us", el: "Επικοινωνήστε Μαζί Μας" },
+        "footer-follow": { en: "Follow the Archive", el: "Ακολουθήστε το Αρχείο" },
+        "footer-disclaimer": { en: "This archive documents an active humanitarian crisis. Some content may be distressing. All data is verified by independent international bodies. Viewer discretion is advised.", el: "Αυτό το αρχείο τεκμηριώνει μια ενεργή ανθρωπιστική κρίση. Ορισμένο περιεχόμενο μπορεί να είναι ανησυχητικό. Όλα τα δεδομένα επαληθεύονται από ανεξάρτητους διεθνείς φορείς." },
+        
+        /* MODALS */
+        "modal-terms-text": { 
+            en: "This archive is an open-source educational resource. By accessing this site, you agree to use the data for humanitarian, academic, or journalistic purposes only. Commercial exploitation of this sensitive data is strictly prohibited. While we verify sources, real-time conflict data is subject to change.", 
+            el: "Αυτό το αρχείο είναι ένας εκπαιδευτικός πόρος ανοιχτού κώδικα. Με την πρόσβαση σε αυτόν τον ιστότοπο, συμφωνείτε να χρησιμοποιείτε τα δεδομένα μόνο για ανθρωπιστικούς, ακαδημαϊκούς ή δημοσιογραφικούς σκοπούς. Η εμπορική εκμετάλλευση αυτών των ευαίσθητων δεδομένων απαγορεύεται αυστηρά. Αν και επαληθεύουμε τις πηγές, τα δεδομένα συγκρούσεων σε πραγματικό χρόνο υπόκεινται σε αλλαγές."
+        },
+        "modal-privacy-text": { 
+            en: "We prioritize your privacy. This site does not use tracking cookies or analytics. Local storage is used exclusively to save your accessibility preferences (language, contrast). Donor information is processed securely by third-party payment processors and is not stored on our servers.", 
+            el: "Δίνουμε προτεραιότητα στο απόρρητό σας. Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies παρακολούθησης ή αναλυτικά στοιχεία. Η τοπική αποθήκευση χρησιμοποιείται αποκλειστικά για την αποθήκευση των προτιμήσεων προσβασιμότητας (γλώσσα, αντίθεση). Οι πληροφορίες των δωρητών υποβάλλονται σε ασφαλή επεξεργασία από τρίτους επεξεργαστές πληρωμών και δεν αποθηκεύονται στους διακομιστές μας."
+        },
+        "modal-contact-text": {
+            en: "For press inquiries, data correction, or partnership opportunities, please reach out to our coordination team.",
+            el: "Για ερωτήσεις τύπου, διόρθωση δεδομένων ή ευκαιρίες συνεργασίας, επικοινωνήστε με την ομάδα συντονισμού μας."
+        }
+    };
+
+    function toggleA11yMenu() {
+        const menu = document.getElementById('a11y-menu');
+        const btn = document.getElementById('a11y-toggle');
+        if (menu.style.display === 'flex') {
+            menu.style.display = 'none';
+            btn.classList.remove('active');
+        } else {
+            menu.style.display = 'flex';
+            btn.classList.add('active');
+        }
+    }
+
+    function toggleActivistTheme() {
+        const isOn = document.body.classList.toggle('theme-activist');
+        localStorage.setItem('theme', isOn ? 'activist' : 'normal');
+    }
+
+    function toggleLanguage() {
+        const currentLang = localStorage.getItem('lang') || 'en';
+        const newLang = currentLang === 'en' ? 'el' : 'en';
+        applyLanguage(newLang);
+    }
+
+    function applyLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[key] && translations[key][lang]) {
+                const text = translations[key][lang];
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = text;
+                    el.setAttribute('aria-label', text);
+                } else if (el.tagName === 'IMG') {
+                    el.alt = text; el.title = text; 
+                } else {
+                    el.innerText = text;
+                }
+            }
+        });
+        const btn = document.getElementById('lang-btn');
+        if (btn) btn.innerText = lang === 'en' ? "Switch to Greek (Ελληνικά)" : "Switch to English";
+    }
+
+    // Initialize logic immediately
+    const savedLang = localStorage.getItem('lang') || 'en';
+    applyLanguage(savedLang);
+    initPreferences(); // <-- THIS runs your settings check on every page load
+</script>
+</body>
+</html>

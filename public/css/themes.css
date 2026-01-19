@@ -1,0 +1,82 @@
+/* --- THEME: SUPPORTER (Tier 1) --- */
+body.theme-supporter {
+    --bg-body: #f0f0f0;
+    background-image: linear-gradient(135deg, rgba(0,0,0,0.05) 25%, rgba(206,17,38,0.05) 25%, rgba(206,17,38,0.05) 50%, rgba(0,122,61,0.05) 50%, rgba(0,122,61,0.05) 75%, rgba(255,255,255,0.05) 75%);
+    background-attachment: fixed;
+}
+
+/* --- THEME: ACTIVIST (Tier 2) --- */
+body.theme-activist {
+    --bg-body: #111;
+    --bg-card: #1e1e1e;
+    --text-head: #f4f4f4;
+    --text-body: #ccc;
+    --border-color: #2bff00; 
+    /* RED ARROW WITH GREEN OUTLINE CURSOR */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3333" stroke="%232bff00" stroke-width="1.5" d="M5.5 3.5l13 9-6.5 1.5-1 6-5.5-16.5z"/></svg>'), auto;
+}
+
+/* Thicker borders for visibility in Activist Theme */
+body.theme-activist nav,
+body.theme-activist .card-meta,
+body.theme-activist div[style*="border-bottom"] {
+    border-width: 3px !important;
+}
+
+body.theme-activist .card-content {
+    padding: 1.5rem;
+}
+
+/* Badge Styling */
+.badge-activist {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: var(--c-red);
+    border-radius: 50%;
+    margin-left: 8px;
+    box-shadow: 0 0 5px var(--c-red);
+}
+
+/* --- ACTIVIST BUTTON FIX --- */
+/* Forces buttons to be Black with White text in Activist mode, overriding the inverted variable */
+body.theme-activist button,
+body.theme-activist .btn,
+body.theme-activist input[type="submit"] {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #2bff00 !important; /* Neon Green Border */
+}
+
+/* --- CRITICAL HIGH CONTRAST FIXES --- */
+
+/* 1. Sync Border Color */
+html.a11y-high-contrast body {
+    --border-color: #ffffff !important;
+}
+
+/* 2. Timeline Line & Dots Fix */
+html.a11y-high-contrast body .timeline::after,
+html.a11y-high-contrast body .timeline-container::after {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* 3. Button Visibility Fix (High Contrast) */
+html.a11y-high-contrast body button, 
+html.a11y-high-contrast body .btn,
+html.a11y-high-contrast body input[type="submit"] {
+    color: #ffffff !important;            
+    border: 2px solid #ffffff !important; 
+    background-color: #000000 !important; 
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* 4. Specific Override for "Direct Action" Cards */
+html.a11y-high-contrast body section#direct-action .card button {
+    color: #ffffff !important;
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}

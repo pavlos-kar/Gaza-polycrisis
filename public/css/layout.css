@@ -1,0 +1,340 @@
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* --- RESET & BASE --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        background-color: var(--bg-body);
+        color: var(--text-body);
+        font-family: var(--font-body);
+        line-height: 1.8;
+        font-weight: 400;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Background Texture */
+    body::before {
+        content: "";
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); 
+        opacity: 0.6;
+        z-index: -1;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Hide texture in High Contrast mode */
+    html.a11y-high-contrast body::before {
+        opacity: 0;
+    }
+
+    h1, h2, h3, h4 { 
+        font-family: var(--font-head); 
+        color: var(--text-head);
+        font-weight: 700;
+    }
+
+    /* --- LAYOUT --- */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: var(--space-md);
+    }
+
+    nav {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid var(--border-color);
+        margin-bottom: 4rem;
+    }
+    nav h1 { font-size: 1.5rem; letter-spacing: -0.5px; margin: 0; }
+    nav a { 
+        color: var(--text-head); 
+        text-decoration: none; 
+        margin-left: 2rem; 
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-bottom: 6rem;
+    }
+
+    /* --- CARD STYLING --- */
+    .card {
+        background: var(--bg-card); 
+        border: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1), background-color 0.3s ease;
+        position: relative;
+        text-align: left;
+        border-radius: 4px;
+    }
+
+    /* High Contrast Card Padding */
+    html.a11y-high-contrast .card {
+        padding: 1.5rem; 
+        border: 1px solid #333; 
+    }
+
+    .card:hover { transform: translateY(-8px); }
+
+    .card-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        margin-bottom: 1.25rem;
+        filter: grayscale(100%) contrast(1.1) brightness(0.9);
+        transition: filter 0.6s ease;
+        border-radius: 2px;
+    }
+    .card:hover .card-image { filter: grayscale(0%) contrast(1) brightness(1); }
+
+    .card-content { display: flex; flex-direction: column; height: 100%; }
+
+    .card h4 {
+        font-family: var(--font-head);
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+        color: var(--text-head);
+        letter-spacing: -0.02em;
+    }
+
+    .card p {
+        font-family: var(--font-body);
+        font-size: 1.05rem; 
+        line-height: 1.6;
+        font-weight: 500; 
+        font-style: normal;
+        color: var(--text-body); 
+        margin-bottom: 1.5rem;
+        max-width: 95%;
+    }
+
+    .card-meta {
+        margin-top: auto;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        color: var(--text-head);
+        padding-top: 1rem;
+        border-top: 2px solid var(--border-color); 
+        display: inline-block;
+        width: 100%;
+        transition: border-color 0.3s ease, color 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .card:hover .card-meta {
+        border-color: var(--c-red);
+        color: var(--c-red);
+        opacity: 1;
+    }
+
+    /* --- ANIMATIONS & ACCESSIBILITY UI --- */
+
+    @keyframes fadeUp { 
+        from { opacity: 0; transform: translateY(40px); } 
+        to { opacity: 1; transform: translateY(0); } 
+    }
+
+    .animate-enter { 
+        opacity: 0; 
+        animation: fadeUp 1s cubic-bezier(0.2, 1, 0.2, 1) forwards; 
+    }
+
+    .a11y-fab { 
+        position: fixed; bottom: 30px; right: 30px; 
+        width: 40px; height: 40px; 
+        background: var(--c-black); color: var(--bg-body); 
+        border: 1px solid var(--border-color); border-radius: 50%; 
+        cursor: pointer; z-index: 999; 
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    .a11y-panel { 
+        position: fixed; bottom: 80px; right: 30px; 
+        background: var(--bg-body); padding: 1rem; 
+        border: 2px solid var(--border-color); 
+        display: none; z-index: 999; 
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        max-height: 80vh;
+        overflow-y: auto;
+        top: auto;
+    }
+
+    .a11y-panel button { 
+        width: 100%; padding: 0.75rem; 
+        margin-bottom: 0.5rem; cursor: pointer; 
+        background: var(--bg-body); color: var(--text-body); 
+        border: 1px solid var(--border-color); 
+        font-weight: 600; 
+    }
+
+    /* --- HERO SECTION REFINEMENTS --- */
+
+    /* Force the sub-headline into one single line */
+    .hero-sub-fixed {
+        white-space: nowrap !important; 
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    /* Beautifully aligned description paragraph */
+    .hero-desc-fixed {
+        max-width: 800px;
+        margin: 3.5rem auto 0;
+        text-align: justify; /* Clean straight edges */
+        line-height: 1.6;
+    }
+
+    /* Big, visible section headers */
+    .section-title-fixed {
+        font-size: 2.2rem !important;
+        font-weight: 800 !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Mobile Fix: Scale down text so it doesn't cut off */
+    @media (max-width: 768px) {
+        .hero-sub-fixed { 
+            white-space: normal !important; /* Allow break only on small phones */
+            font-size: 0.8rem !important; 
+        }
+    }
+
+    /* --- Text Alignment Fixes --- */
+
+    /* Ensures the sub-headline stays on one line */
+    .hero-sub-fixed {
+        white-space: nowrap !important;
+        display: block;
+        width: 100%;
+    }
+
+    /* Ensures the description stays on one line and fits the screen */
+    .hero-desc-fixed {
+        white-space: nowrap !important;
+        display: block;
+        width: 100%;
+        margin-top: 3.5rem;
+    }
+
+    /* Mobile responsive scaling to keep everything on one line without cutting off */
+    @media (max-width: 1100px) {
+        .hero-sub-fixed { font-size: 0.75rem !important; }
+        .hero-desc-fixed { font-size: 1.1rem !important; }
+    }
+
+    @media (max-width: 768px) {
+        .hero-sub-fixed { font-size: 0.6rem !important; }
+        .hero-desc-fixed { font-size: 0.8rem !important; }
+    }
+
+    /* --- Hero Layout Refinements --- */
+
+    .hero-section {
+        margin-top: 5rem;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    /* Sub-headline: Centered and clean */
+    .hero-sub-text {
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.7;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    /* Main Paragraph: Smoothly justified with balanced margins */
+    .hero-description {
+        max-width: 750px; /* Constraining width makes line breaks more pleasing */
+        margin: 3rem auto 0;
+        font-family: var(--font-head);
+        font-size: 1.35rem;
+        line-height: 1.6;
+        color: var(--text-head);
+        text-align: justify;       /* Creates clean straight edges on both sides */
+        text-justify: inter-word;  /* Ensures spacing between words is even */
+    }
+
+    /* Fix for mobile screens */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.5rem; }
+        .hero-description { 
+            font-size: 1.1rem; 
+            text-align: center; /* Justify can look awkward on very narrow screens */
+        }
+    }
+
+    /* --- Hero Section Styling --- */
+
+    .hero-center-container {
+        margin-top: 6rem;
+        text-align: center;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .hero-sub-text {
+        opacity: 0.7;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        max-width: 900px; /* Wider limit to keep it on fewer lines */
+        margin-bottom: 3rem;
+    }
+
+    .hero-description {
+        /* Adjusted width to ensure "Gaza today" has company on its line */
+        max-width: 850px; 
+        font-family: var(--font-head);
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: var(--text-head);
+        text-align: center; /* Centering often solves 'lonely' words better than justify */
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.5rem; }
+        .hero-description { font-size: 1.1rem; }
+    }
+
